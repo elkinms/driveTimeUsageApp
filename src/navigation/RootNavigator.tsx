@@ -1,8 +1,8 @@
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Drive from '../screens/Drive';
-import Trips from '../screens/Trips';
+import Drive from '../features/trips/screens/Drive';
+import Trips from '../features/trips/screens/Trips';
 
 const Tab = createBottomTabNavigator();
 
