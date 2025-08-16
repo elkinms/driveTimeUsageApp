@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type User = { id: string; name?: string };
+type User = { id: string; email: string; name?: string };
 
 interface AuthState {
   user: User | null;
@@ -25,3 +25,4 @@ const authSlice = createSlice({
 
 export const { setUser, logout } = authSlice.actions;
 export default authSlice.reducer;
+export const selectUserEmail = (state: { auth: AuthState }) => state.auth.user?.email ?? null;
