@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks.ts';
 import { resetTrip, startTrip, stopTrip } from '../tripSlice.ts';
 import { API_BASE_URL } from '../../../utils/constants';
 import { selectUserEmail } from '../../auth/authSlice';
+import Header from '../../auth/components/Header';
 
 const Drive = () => {
   const userEmail = useAppSelector(selectUserEmail);
@@ -42,6 +43,7 @@ const Drive = () => {
 
   return (
     <View>
+      <Header />
       <View>
         <Text>Welcome. Drive safely.</Text>
       </View>
