@@ -4,7 +4,7 @@ export type User = {
 };
 
 export type UserRequest = {
-  login: string;
+  email: string;
   password: string;
   name?: string;
 };

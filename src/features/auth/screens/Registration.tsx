@@ -16,7 +16,7 @@ const Registration = () => {
 
   const onSubmit = async () => {
     try {
-      const user = await register({ login: email, password, name }).unwrap();
+      const user = await register({ email, password, name }).unwrap();
       dispatch(setUser(user));
 
       navigation.dispatch(
