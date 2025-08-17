@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">driveTimeUsageApp</string>
+    <string name="app_name">DriveTime Usage</string>
+    <string name="accessibility_service_description">DriveTime Usage Logger</string>
 </resources>
