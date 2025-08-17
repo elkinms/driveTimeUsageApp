@@ -2,9 +2,11 @@ import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import Header from '../../auth/components/Header';
 import { useGetTripsQuery } from '../tripApi.ts';
 import Trip from '../components/Trip';
+import { useAppSelector } from '../../../app/hooks';
 
 const Trips = () => {
-  const { data: trips, isLoading, isError, refetch } = useGetTripsQuery();
+  const email = useAppSelector((state) => state.auth.user?.email);
+  const { data: trips, isLoading, isError, refetch } = useGetTripsQuery({ email, limit: 5 });
   if (isLoading) return <ActivityIndicator />;
   if (isError) {
     return (

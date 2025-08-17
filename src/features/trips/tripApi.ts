@@ -6,10 +6,9 @@ export const tripsApi = createApi({
   reducerPath: 'tripsApi',
   baseQuery: fetchBaseQuery({ baseUrl: API_BASE_URL }),
   endpoints: builder => ({
-    getTrips: builder.query<TripData[], void>({
-      query: () => '/trips',
+    getTrips: builder.query<TripData[], { email: string; limit?: number }>({
+      query: ({email, limit=5}) => `/trips?email=${email}&limit=${limit}`,
     }),
   }),
 });
-
 export const { useGetTripsQuery } = tripsApi;
